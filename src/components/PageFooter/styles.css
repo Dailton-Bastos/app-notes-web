@@ -1,0 +1,32 @@
+.page-footer {
+  width: 100vw;
+  height: 60px;
+}
+
+.page-footer .footer-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-footer .footer-content > p {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--color-text-title);
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.page-footer .footer-content .credits {
+  display: flex;
+}
+
+.page-footer .footer-content .credits p {
+  color: var(--color-text-base);
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+}
+
+.page-footer .footer-content .credits p a {
+  text-decoration: none;
+  color: var(--color-text-title);
+}
