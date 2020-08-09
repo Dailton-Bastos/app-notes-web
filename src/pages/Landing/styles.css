@@ -1,0 +1,74 @@
+#page-landing {
+  width: 100vw;
+  height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-landing-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#page-landing-content .content {
+  display: flex;
+  flex-direction: column;
+}
+
+#page-landing-content .content h1 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  color: var(--color-text-title);
+}
+
+#page-landing-content .content p {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: var(--color-text-base);
+  margin-bottom: 3rem;
+}
+
+#page-landing-content .content a {
+  max-width: 300px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--color-primary);
+  color: var(--color-title-in-primary);
+  padding: 1.8rem 0;
+  border-radius: 14px;
+  margin-bottom: 3rem;
+  transition: background-color 0.2s;
+}
+
+#page-landing-content .content a:hover {
+  background-color: var(--color-primary-dark);
+}
+
+#page-landing-content .content span {
+  font-size: 1.4rem;
+  color: var(--color-text-base);
+}
+
+#page-landing-content .hero-image img {
+  height: 40rem;
+}
+
+@media (max-width: 700px) {
+  #page-landing-content .hero-image {
+    order: -1;
+  }
+
+  #page-landing-content .hero-image img {
+    height: 30rem;
+  }
+  #page-landing-content {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
