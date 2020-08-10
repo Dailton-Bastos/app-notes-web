@@ -1,0 +1,41 @@
+#form-content-login {
+  margin-top: 3rem;
+}
+
+#form-content-login form .form-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+#form-content-login form .form-buttons p {
+  font-weight: normal;
+}
+
+#form-content-login form .form-buttons p a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--color-primary);
+  transition: color 0.2s;
+}
+
+#form-content-login form .form-buttons p a:hover {
+  color: var(--color-primary-dark);
+}
+
+#form-content-login form .form-buttons button {
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background-color: var(--color-primary);
+  color: var(--color-title-in-primary);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#form-content-login form .form-buttons button:hover {
+  background-color: var(--color-primary-dark);
+}
