@@ -1,0 +1,47 @@
+#page-register {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-register-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-register-content .image-hero img {
+  max-height: 40rem;
+  display: block;
+  max-width: 100%;
+}
+
+.page-register-content .register-form {
+  max-width: 350px;
+  width: 100%;
+}
+
+.page-register-content .register-form h1 {
+  font-size: 3rem;
+  color: var(--color-text-title);
+  margin-bottom: 1rem;
+}
+
+.page-register-content .register-form p {
+  font-size: 1.4rem;
+  color: var(--color-text-base);
+}
+
+@media (max-width: 700px) {
+  .page-register-content {
+    flex-direction: column;
+    margin: 10rem 0 3rem;
+  }
+
+  .page-register-content .image-hero img {
+    max-width: 30rem;
+  }
+}
