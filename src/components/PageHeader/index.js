@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import noteIcon from '../../assets/images/note.svg'
 import './styles.css'
 
@@ -8,7 +9,7 @@ function PageHeader() {
       <div className="header-content container">
         <div className="logo">
           <img src={noteIcon} alt="Note" />
-          <a href="/">NoteApp</a>
+          <Link to="/">NoteApp</Link>
         </div>
 
         <div className="auth">

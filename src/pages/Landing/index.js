@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import landingImg from '../../assets/images/landing.jpg'
 import PageFooter from '../../components/PageFooter'
 import PageHeader from '../../components/PageHeader'
@@ -22,7 +23,7 @@ function Landing() {
               create notes easily and access when you wants on the cloud.
             </p>
 
-            <a href="/register">Try now for free</a>
+            <Link to="/register">Try now for free</Link>
 
             <span>Free, not credit card required, register now.</span>
           </div>
