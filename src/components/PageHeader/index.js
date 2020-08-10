@@ -13,7 +13,7 @@ function PageHeader() {
         </div>
 
         <div className="auth">
-          <a href="/signin">Login</a>
+          <Link to="/signin">Login</Link>
         </div>
       </div>
     </header>
