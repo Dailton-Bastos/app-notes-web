@@ -1,0 +1,122 @@
+.header-dasboard {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-dasboard .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  font-weight: bold;
+  height: 50px;
+}
+
+.header-dasboard .content .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-dasboard .content .logo img {
+  height: 2.5rem;
+  margin-right: 1rem;
+}
+
+.header-dasboard .content .logo a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: var(--color-text-title);
+}
+
+.content .profile {
+  position: relative;
+}
+
+.content .profile .username {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  color: var(--color-text-base);
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 5px 0;
+}
+
+.content .profile:hover .username {
+  color: var(--color-text-title);
+}
+
+.content .profile .username span + span {
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.content .profile .menu {
+  position: absolute;
+  top: 3.2rem;
+  left: 0;
+  margin-top: 0.8rem;
+  max-width: 200px;
+  width: 100%;
+  display: block;
+  background-color: var(--color-background);
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  transition: all 0.2s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.profile:hover .menu {
+  top: 2rem;
+  opacity: 1;
+  visibility: initial;
+  padding: 5px 0;
+}
+
+.profile .menu ul {
+  list-style: none;
+  text-align: center;
+}
+
+.profile .menu ul li a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.profile .menu ul li button {
+  border: none;
+  outline: none;
+}
+
+.profile .menu ul li a,
+.profile .menu ul li button {
+  color: var(--color-text-base);
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border-radius: 4px;
+  display: inline-block;
+  width: 100%;
+  background-color: transparent;
+}
+
+.profile .menu ul li a:hover,
+.profile .menu ul li button:hover {
+  color: var(--color-text-title);
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .header-dasboard .content {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  .content .profile {
+    margin-top: 1rem;
+  }
+}
