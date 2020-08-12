@@ -7,6 +7,7 @@
   border: 1px solid var(--color-title-in-primary-light);
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-background);
 }
 
 .notes-content {
@@ -16,9 +17,36 @@
 .notes-content .notes-sidebar {
   max-width: 260px;
   width: 100%;
+  padding-right: 1rem;
+}
+
+.notes-sidebar .notes-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.notes-sidebar .notes-count h2 {
+  font-size: 1.6rem;
+  color: var(---color-text-base);
+}
+
+.notes-sidebar .notes-count h2 span {
+  margin-right: 5px;
+}
+
+.notes-sidebar .notes-count > span {
+  font-size: 3rem;
+  color: var(--color-text-title);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.notes-sidebar .notes-count > span:hover {
+  color: var(--color-title-in-primary-dark);
 }
 
 .notes-content .notes-editor {
   flex-grow: 3;
-  background-color: royalblue;
 }
