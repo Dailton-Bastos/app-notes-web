@@ -8,8 +8,8 @@ import './styles.css'
 function Header() {
   const history = useHistory()
 
-  const logOut = () => {
-    UsersService.logout()
+  const logOut = async () => {
+    await UsersService.logout()
 
     return history.push('/')
   }

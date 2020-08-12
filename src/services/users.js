@@ -10,7 +10,7 @@ const UsersService = {
     localStorage.setItem('token', token)
   },
 
-  logout: () => {
+  logout: async () => {
     localStorage.removeItem('user', null)
     localStorage.removeItem('token', null)
   },

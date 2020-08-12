@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import PrivateRoutes from './components/PrivateRoutes'
-import Dashboard from './pages/Dashboard/Header'
+import Dashboard from './pages/Dashboard'
 import Landing from './pages/Landing'
 import Signin from './pages/Signin'
 import Signup from './pages/Signup'
