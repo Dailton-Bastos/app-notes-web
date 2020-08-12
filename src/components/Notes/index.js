@@ -14,6 +14,11 @@ function Notes() {
     setNotes(notes.data)
   }
 
+  const createNote = async () => {
+    await NotesServices.create()
+    fetchNotes()
+  }
+
   useEffect(() => {
     fetchNotes()
   }, [])
@@ -27,7 +32,7 @@ function Notes() {
             <h2>
               <span>{notes.length}</span>Notes
             </h2>
-            <span>
+            <span onClick={() => createNote()} title="Add new note">
               <MdNoteAdd />
             </span>
           </div>

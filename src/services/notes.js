@@ -1,9 +1,19 @@
 import api from './api'
 
-// const headers = { 'x-access-token': localStorage.getItem('token') }
+const headers = { 'x-access-token': localStorage.getItem('token') }
 
 const NotesService = {
   index: (token) => api.get('/notes', { headers: token }),
+
+  create: () =>
+    api.post(
+      '/notes',
+      {
+        title: 'Note title',
+        body: 'Note body',
+      },
+      { headers }
+    ),
 }
 
 export default NotesService
