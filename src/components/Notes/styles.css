@@ -14,8 +14,8 @@
 }
 
 .notes-content .notes-sidebar {
-  background-color: red;
-  flex-grow: 1;
+  max-width: 260px;
+  width: 100%;
 }
 
 .notes-content .notes-editor {
