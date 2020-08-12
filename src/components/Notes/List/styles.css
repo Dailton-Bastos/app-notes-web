@@ -2,8 +2,7 @@
   max-height: 350px;
   height: 100%;
   overflow-y: auto;
-  margin-top: 2rem;
-  padding-right: 1rem;
+  margin-top: 3rem;
 }
 
 .list-container ul {
@@ -58,7 +57,6 @@
   align-items: center;
   justify-content: space-between;
   color: var(--color-title-in-primary-dark);
-  padding-right: 1rem;
 }
 
 .list-container .notes-pagination span {

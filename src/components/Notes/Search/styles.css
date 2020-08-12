@@ -1,5 +1,5 @@
 .search-container {
-  margin: 2rem 0;
+  margin-top: 2rem;
 }
 
 .search-container .input {
@@ -10,7 +10,6 @@
 .search-container .input .clear-filter {
   font-size: 2rem;
   cursor: pointer;
-  margin-right: 1rem;
 }
 
 .input-container {
@@ -53,6 +52,7 @@
 
 .search-container p {
   margin: 5px 0;
+  text-align: center;
 }
 
 .search-container p strong {
