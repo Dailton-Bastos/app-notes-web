@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import NotesServices from '../../services/notes'
 import { MdNoteAdd } from 'react-icons/md'
 import Search from './Search'
 import List from './List'
 import './styles.css'
 
 function Notes() {
+  const [notes, setNotes] = useState([])
+
+  const fetchNotes = async () => {
+    const token = localStorage.getItem('token')
+    const notes = await NotesServices.index({ 'x-access-token': token })
+    setNotes(notes.data)
+  }
+
+  useEffect(() => {
+    fetchNotes()
+  }, [])
+
   return (
     <main className="notes-container">
       <div className="notes-content">
@@ -12,13 +25,13 @@ function Notes() {
           <Search />
           <div className="notes-count">
             <h2>
-              <span>0</span>Notes
+              <span>{notes.length}</span>Notes
             </h2>
             <span>
               <MdNoteAdd />
             </span>
           </div>
-          <List />
+          <List notes={notes} />
         </section>
 
         <section className="notes-editor">Editor</section>
