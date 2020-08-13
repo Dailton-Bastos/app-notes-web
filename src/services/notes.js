@@ -14,6 +14,8 @@ const NotesService = {
       },
       { headers }
     ),
+
+  destroy: (id) => api.delete(`/notes/${id}`, { headers }),
 }
 
 export default NotesService

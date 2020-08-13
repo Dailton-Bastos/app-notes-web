@@ -19,6 +19,14 @@ function Notes() {
     fetchNotes()
   }
 
+  const deleteNote = async (id) => {
+    const confirm = window.confirm('Are you sure?')
+
+    if (!confirm) return
+    await NotesServices.destroy(id)
+    fetchNotes()
+  }
+
   useEffect(() => {
     fetchNotes()
   }, [])
@@ -36,7 +44,7 @@ function Notes() {
               <MdNoteAdd />
             </span>
           </div>
-          <List notes={notes} />
+          <List notes={notes} delete={deleteNote} />
         </section>
 
         <section className="notes-editor">Editor</section>

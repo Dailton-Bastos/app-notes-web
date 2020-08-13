@@ -10,7 +10,7 @@ function NotesList(props) {
       <ul>
         {props.notes.map((note) => (
           <li key={note.id}>
-            <span className="delete-note">
+            <span className="delete-note" onClick={() => props.delete(note.id)}>
               <MdDeleteForever />
             </span>
             <div className="notes-info">
