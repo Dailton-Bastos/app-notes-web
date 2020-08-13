@@ -1,26 +1,47 @@
 import React from 'react'
 import { MdSearch, MdClear } from 'react-icons/md'
 import './styles.css'
+import { useState } from 'react'
 
-function Search() {
+function Search(props) {
+  const [filter, setFilter] = useState('')
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') props.search(filter)
+  }
+
   return (
     <div className="search-container">
       <div className="input">
         <div className="input-container">
-          <span>
+          <span onClick={() => props.search(filter)}>
             <MdSearch />
           </span>
-          <input type="text" placeholder="Search notes" />
+          <input
+            type="text"
+            placeholder="Search notes"
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
         </div>
 
-        <span className="clear-filter">
+        <span
+          className="clear-filter"
+          onClick={() => {
+            props.fetchNotes()
+            setFilter('')
+          }}
+        >
           <MdClear />
         </span>
       </div>
-      {/* <p>
-        Searching for <strong>nodejs</strong>
-      </p>
-      <span>No notes found</span> */}
+
+      {filter && (
+        <p>
+          Searching for <strong>{filter}</strong>
+        </p>
+      )}
     </div>
   )
 }

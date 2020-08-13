@@ -15,6 +15,8 @@ const NotesService = {
       { headers }
     ),
 
+  search: (filter) => api.get(`/notes/search?filter=${filter}`, { headers }),
+
   destroy: (id) => api.delete(`/notes/${id}`, { headers }),
 }
 

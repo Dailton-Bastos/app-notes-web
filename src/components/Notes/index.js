@@ -27,6 +27,18 @@ function Notes() {
     fetchNotes()
   }
 
+  const searchNote = async (filter) => {
+    if (!filter) return
+
+    try {
+      const results = await NotesServices.search(filter)
+
+      return setNotes(results.data)
+    } catch (error) {
+      setNotes([])
+    }
+  }
+
   useEffect(() => {
     fetchNotes()
   }, [])
@@ -35,7 +47,7 @@ function Notes() {
     <main className="notes-container">
       <div className="notes-content">
         <section className="notes-sidebar">
-          <Search />
+          <Search search={searchNote} fetchNotes={fetchNotes} />
           <div className="notes-count">
             <h2>
               <span>{notes.length}</span>Notes

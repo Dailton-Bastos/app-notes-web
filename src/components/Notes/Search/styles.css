@@ -44,8 +44,7 @@
   border-bottom-width: 2px;
 }
 
-.search-container p,
-.search-container span {
+.search-container p {
   font-size: 1.4rem;
   color: var(--color-text-title);
 }
