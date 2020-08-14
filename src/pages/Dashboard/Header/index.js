@@ -33,7 +33,7 @@ function Header() {
           <nav className="menu">
             <ul>
               <li>
-                <a href="/dashboard/profile">My Profile</a>
+                <Link to="/dashboard/profile">My Profile</Link>
               </li>
               <li>
                 <button type="button" onClick={() => logOut()}>
