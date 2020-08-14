@@ -3,15 +3,21 @@ import NotesServices from '../../services/notes'
 import { MdNoteAdd } from 'react-icons/md'
 import Search from './Search'
 import List from './List'
+import Editor from './Editor'
 import './styles.css'
 
 function Notes() {
   const [notes, setNotes] = useState([])
+  const [currentNote, setCurrentNote] = useState({
+    id: '',
+    title: '',
+    body: '',
+  })
 
   const fetchNotes = async () => {
-    const token = localStorage.getItem('token')
-    const notes = await NotesServices.index({ 'x-access-token': token })
+    const notes = await NotesServices.index()
     setNotes(notes.data)
+    if (notes.data.length) setCurrentNote(notes.data[0])
   }
 
   const createNote = async () => {
@@ -39,6 +45,11 @@ function Notes() {
     }
   }
 
+  const selectNote = (id) => {
+    const note = notes.find((note) => note.id === id)
+    return setCurrentNote(note)
+  }
+
   useEffect(() => {
     fetchNotes()
   }, [])
@@ -56,10 +67,12 @@ function Notes() {
               <MdNoteAdd />
             </span>
           </div>
-          <List notes={notes} delete={deleteNote} />
+          <List notes={notes} delete={deleteNote} selectNote={selectNote} />
         </section>
 
-        <section className="notes-editor">Editor</section>
+        <section className="editor-container">
+          <Editor note={currentNote} />
+        </section>
       </div>
     </main>
   )

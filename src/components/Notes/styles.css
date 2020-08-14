@@ -1,17 +1,20 @@
 .notes-container {
   max-width: 90vw;
   width: 100%;
-  height: calc(100vh - 110px);
-  margin: 4rem 0;
+  max-height: calc(100vh - 140px);
+  height: 100%;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
   padding: 0 1rem;
   border: 1px solid var(--color-title-in-primary-light);
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  background-color: var(--color-background);
+  background-color: var(--color-notes-background);
 }
 
 .notes-content {
   display: flex;
+  height: 100%;
 }
 
 .notes-content .notes-sidebar {
@@ -47,6 +50,9 @@
   color: var(--color-title-in-primary-dark);
 }
 
-.notes-content .notes-editor {
-  flex-grow: 3;
+.notes-content .editor-container {
+  width: 100%;
+  background-color: var(--color-background);
+  border-radius: 14px;
+  margin: 1rem 0;
 }

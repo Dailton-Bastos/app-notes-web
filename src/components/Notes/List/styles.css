@@ -33,7 +33,7 @@
   color: var(--color-primary-dark);
 }
 
-.list-container ul li .notes-info h2 {
+.notes-info h2.title {
   font-size: 1.4rem;
   font-weight: bold;
   line-height: 2rem;
@@ -42,11 +42,15 @@
   cursor: pointer;
 }
 
-.list-container ul li .notes-info h2:hover {
+.notes-info h2.title:hover {
   color: var(--color-title-in-primary-dark);
 }
 
-.list-container ul li .notes-info span {
+.notes-info h2.title.active {
+  color: var(--color-title-in-primary-dark);
+}
+
+.notes-info span {
   font-size: 1.2rem;
   font-weight: normal;
   color: var(--color-text-base);
