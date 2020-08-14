@@ -35,7 +35,7 @@ function NotesList(props) {
                   toggleActive(index)
                 }}
               >
-                {note.title.replace(/(<([^>]+)>)/gi, '').substring(0, 25)}
+                {note.title.replace(/(<([^>]+)>)/gi, '').substring(0, 25)}...
               </h2>
               <span>{formateDate(note.created_at)}</span>
             </div>

@@ -18,6 +18,11 @@ const NotesService = {
   search: (filter) =>
     api.get(`/notes/search?filter=${filter}`, { headers: NotesService.token }),
 
+  update: (id, params) =>
+    api.put(`/notes/${id}`, params, {
+      headers: { 'x-access-token': localStorage.getItem('token') },
+    }),
+
   destroy: (id) => api.delete(`/notes/${id}`, { headers: NotesService.token }),
 }
 

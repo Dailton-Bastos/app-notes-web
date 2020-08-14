@@ -25,6 +25,17 @@ function Notes() {
     fetchNotes()
   }
 
+  const updateNote = async (oldNote, params) => {
+    if (oldNote.id) {
+      const updatedNote = await NotesServices.update(oldNote.id, params)
+      const index = notes.indexOf(oldNote)
+      const newNotes = notes
+      newNotes[index] = updatedNote.data
+      setNotes(newNotes)
+      return setCurrentNote(updatedNote.data)
+    }
+  }
+
   const deleteNote = async (id) => {
     const confirm = window.confirm('Are you sure?')
 
@@ -71,7 +82,7 @@ function Notes() {
         </section>
 
         <section className="editor-container">
-          <Editor note={currentNote} />
+          <Editor note={currentNote} updateNote={updateNote} />
         </section>
       </div>
     </main>
