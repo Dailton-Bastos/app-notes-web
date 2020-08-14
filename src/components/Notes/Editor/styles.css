@@ -1,0 +1,7 @@
+.editor-content {
+  height: 100%;
+}
+
+.editor-content .quill {
+  height: 90%;
+}
