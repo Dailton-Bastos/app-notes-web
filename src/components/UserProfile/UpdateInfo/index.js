@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Input from '../../Input'
 import UsersService from '../../../services/users'
 import './styles.css'
@@ -10,33 +10,26 @@ function UpdateInfo() {
   const [error, setError] = useState(false)
   const [status, setStatus] = useState('')
 
-  const initializeUser = async () => {
-    const user = await JSON.parse(localStorage.getItem('user'))
-
-    setName(user['name'])
-    setEmail(user['email'])
-  }
-
   const handleSubmit = async (evt) => {
     evt.preventDefault()
 
     try {
       if (!email || !name) {
         setError(true)
-        setMessage('Name and email is required')
+        return setMessage('Name and email is required')
       }
       await UsersService.update({ name, email })
 
       setStatus('success')
+      setError(false)
+      setMessage('')
     } catch (error) {
+      setStatus(false)
       setError(true)
       setMessage('Problem in update, try again')
     }
   }
 
-  useEffect(() => {
-    initializeUser()
-  }, [])
   return (
     <div className="profile-info">
       <h2>Update Info</h2>
@@ -45,14 +38,14 @@ function UpdateInfo() {
           type="text"
           label="Full Name"
           name="name"
-          value={name || ''}
+          value={name}
           onChange={(e) => setName(e.target.value)}
           error={error}
         />
         <Input
           label="Email"
           name="email"
-          value={email || ''}
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
           error={error}
           message={message}
