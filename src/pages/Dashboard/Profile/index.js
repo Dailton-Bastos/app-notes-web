@@ -1,14 +1,19 @@
 import React from 'react'
 import Header from '../Header'
-import Footer from '../../../components/PageFooter'
-import Profile from '../../../components/UserProfile'
+import UpdateInfo from '../../../components/UserProfile/UpdateInfo'
+import UpdatePassword from '../../../components/UserProfile/UpdatePassword'
+import DeleteAccount from '../../../components/UserProfile/DeleteAccount'
+import './styles.css'
 
 function UserProfile() {
   return (
     <>
       <Header />
-      <Profile />
-      <Footer />
+      <div className="profile-container container">
+        <UpdateInfo />
+        <UpdatePassword />
+        <DeleteAccount />
+      </div>
     </>
   )
 }
