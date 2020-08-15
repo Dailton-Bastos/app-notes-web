@@ -14,6 +14,14 @@ const UsersService = {
     localStorage.removeItem('user', null)
     localStorage.removeItem('token', null)
   },
+
+  update: async (params) => {
+    const user = await api.put('/users', params, {
+      headers: { 'x-access-token': localStorage.getItem('token') },
+    })
+
+    localStorage.setItem('user', JSON.stringify(user.data))
+  },
 }
 
 export default UsersService
