@@ -1,9 +1,10 @@
 import api from './api'
 
 const NotesService = {
-  token: { 'x-access-token': localStorage.getItem('token') },
-
-  index: () => api.get('/notes', { headers: NotesService.token }),
+  index: () =>
+    api.get('/notes', {
+      headers: { 'x-access-token': localStorage.getItem('token') },
+    }),
 
   create: () =>
     api.post(
@@ -12,18 +13,23 @@ const NotesService = {
         title: 'Note title',
         body: 'Note body',
       },
-      { headers: NotesService.token }
+      { headers: { 'x-access-token': localStorage.getItem('token') } }
     ),
 
   search: (filter) =>
-    api.get(`/notes/search?filter=${filter}`, { headers: NotesService.token }),
+    api.get(`/notes/search?filter=${filter}`, {
+      headers: { 'x-access-token': localStorage.getItem('token') },
+    }),
 
   update: (id, params) =>
     api.put(`/notes/${id}`, params, {
       headers: { 'x-access-token': localStorage.getItem('token') },
     }),
 
-  destroy: (id) => api.delete(`/notes/${id}`, { headers: NotesService.token }),
+  destroy: (id) =>
+    api.delete(`/notes/${id}`, {
+      headers: { 'x-access-token': localStorage.getItem('token') },
+    }),
 }
 
 export default NotesService
